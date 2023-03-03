@@ -1,0 +1,113 @@
+input, label, textarea {
+  margin: 0 0 0 14px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template: 428px /1fr 1fr;
+  margin: 70px 120px 72px 120px;
+
+  label {
+    align-self: end;
+    font-size: 1.2rem;
+  }
+
+  input {
+    width: 504px;
+
+  }
+
+  textarea {
+    width: 504px;
+    height: 107px;
+  }
+
+  .form {
+    display: grid;
+    grid-template: repeat(8, 50px) 150px/1fr 1fr;
+    grid-area: 1/1/2/2;
+    justify-content: left;
+    align-content: start;
+    align-items: start;
+    margin: 0 0 0 140px;
+    width: 504px;
+    height: 107px;
+
+    .labelUserPageSurname {
+      grid-area: 1/1/2/2;
+    }
+
+    .userPageSurname {
+      grid-area: 2/1/3/2;
+    }
+
+    .labelUserPageName {
+      grid-area: 3/1/4/2;
+    }
+
+    .userPageName {
+      grid-area: 4/1/5/2;
+    }
+
+    .labelUserPagePatronymic {
+      grid-area: 5/1/6/2;
+    }
+
+    .userPagePatronymic {
+      grid-area: 6/1/7/2;
+    }
+
+    .labelUserPageBirthday {
+      grid-area: 7/1/8/2;
+    }
+
+    .userPageBirthday {
+      grid-area: 8/1/9/2;
+    }
+
+    .labelUserPageEmail {
+      grid-area: 1/2/2/3;
+    }
+
+    .userPageEmail {
+      grid-area: 2/2/3/3;
+    }
+
+    .labelUserPagePhone {
+      grid-area: 3/2/4/3;
+    }
+
+    .userPagePhone {
+      grid-area: 4/2/5/3;
+    }
+
+    .labelUserPageComments {
+      grid-area: 5/2/6/3;
+    }
+
+    .userPageComments {
+      grid-area: 6/2/8/3;
+      height: 130px;
+    }
+
+    .userPageBtn {
+      grid-area: 8/1/9/3;
+      width: 150px;
+      height: 30px;
+      justify-self: center;
+      border-radius: 5px;
+      border: 0;
+      margin-top: 70px;
+      margin-left: 30px;
+      background-color: #bed0d0;
+      cursor: pointer;
+
+      & :hover {
+        background-color: red;
+      }
+    }
+  }
+}
+
+
+

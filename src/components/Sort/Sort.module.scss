@@ -1,0 +1,39 @@
+.sort {
+  grid-area: 1/2/2/3;
+  display: grid;
+  grid-template: 25px 1fr/ 130px 150px;
+
+  p {
+    font-weight: bold;
+  }
+
+  .currentSort {
+    cursor: pointer;
+    grid-area: 1/2/2/3;
+    justify-self: start;
+  }
+
+  .anotherSortPassive {
+    grid-area: 2/2/3/3;
+    justify-self: start;
+    position: relative;
+    display: none;
+
+    li {
+      list-style-type: none;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 3px #a7a7af;
+      }
+    }
+  }
+
+  .anotherSortActive {
+    display: block;
+    background: white;
+    box-shadow: 0 2px 3px #a7a7af;
+    padding: 1px;
+
+  }
+}

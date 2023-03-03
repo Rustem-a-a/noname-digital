@@ -1,0 +1,14 @@
+.input {
+  background-color: inherit;
+  width: 450px;
+  height: 40px;
+  border: 0px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-bottom: 2px black solid;
+
+  &:focus {
+    background-color: rgba(203, 206, 211, 0.73);
+    outline: 0;
+  }
+}
