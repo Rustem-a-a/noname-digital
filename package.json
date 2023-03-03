@@ -2,6 +2,7 @@
   "name": "noname-digital",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rustem-a-a.github.io/noname-digital/",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
