@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import './firebase';
 import {Provider} from 'react-redux'
 import store from './store/index'
@@ -15,12 +15,11 @@ root.render(
         clientId='ZP9wtBYYqDKROlrzG6RhbDAxwvWRZcYm'
         authorizationParams={{
             redirect_uri: window.location.origin
-        }}
-    >
+        }}>
         <Provider store={store}>
-            <BrowserRouter>
+            <HashRouter>
                 <App/>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     </Auth0Provider>
 );

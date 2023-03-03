@@ -11,12 +11,14 @@ import {useEffect} from "react";
 import {addToCart} from "./store/slices/orderSlice";
 import Own from "./pages/Account/Own";
 import Layout from "./components/Layout";
+import {setAuthFromLS} from "./store/slices/authSlice";
 
 function App() {
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.authReducer.isAuth)
     useEffect(() => {
         dispatch(addToCart(JSON.parse(localStorage.getItem('cart'))))
+        dispatch(setAuthFromLS())
     }, [])
 
     return (
@@ -28,7 +30,9 @@ function App() {
                     {!isAuth
                         ? <Route path='login' element={<Login/>}/>
                         : <Route path='login' element={<Navigate to='/' replace/>}/>}}
-                    <Route path='registration' element={<Registration/>}/>
+                    {!isAuth
+                        ? <Route path='registration' element={<Registration/>}/>
+                        : <Route path='registration' element={<Navigate to='/' replace/>}/>}
                     <Route path='currentCategory/:path' element={<CurrentCategory/>}/>
                     <Route path='currentCategory/:path/:id' element={<Dynamic/>}/>
                     {isAuth && <Route path='own' element={<Own/>}/>}

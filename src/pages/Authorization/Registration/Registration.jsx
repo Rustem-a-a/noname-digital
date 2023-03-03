@@ -4,15 +4,28 @@ import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
 import {Link} from 'react-router-dom'
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {toast, ToastContainer} from "react-toastify";
+import {setUser} from "../../../store/slices/authSlice";
+import {useDispatch} from "react-redux";
 
 const Registration = () => {
+    const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const handleRegistration = (email, password) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
-            .then(console.log)
-            .catch(console.error)
+            .then(({user}) => {
+                dispatch(setUser({
+                    email: user.email,
+                    token: user.accessToken,
+                    id: user.uid,
+                }))
+
+            })
+            .catch((e)=>{
+                toast.error(JSON.stringify((e)))
+            })
     }
     return (
         <div className={styles.wrapper} onClick={e => e.stopPropagation()}>
@@ -46,6 +59,7 @@ const Registration = () => {
                             handleRegistration(email, password)
                         }}>Зарегестрироваться</Button></div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };

@@ -9,8 +9,8 @@ const LogoutButton = () => {
     console.log(logout)
     return (
         <p style={{cursor: 'pointer'}} onClick={() => {
-            logout({logoutParams: {returnTo: window.location.origin}})
-            dispatch(logoutRedux)
+            // logout({logoutParams: {returnTo: window.location.origin}})
+            dispatch(logoutRedux())
         }}>
             Выйти
         </p>

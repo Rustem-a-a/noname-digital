@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import {useDispatch} from "react-redux";
 import {setUser} from "../../../store/slices/authSlice";
+import {toast, ToastContainer} from "react-toastify";
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -14,12 +15,17 @@ const Login = () => {
     const handleLogin = (email, password) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
-            .then(({user}) => dispatch(setUser({
-                email: user.email,
-                token: user.accessToken,
-                id: user.uid,
-            })))
-            .catch(console.error)
+            .then(({user}) => {
+                dispatch(setUser({
+                    email: user.email,
+                    token: user.accessToken,
+                    id: user.uid,
+                }))
+
+            })
+            .catch((e)=>{
+                toast.error(JSON.stringify((e)))
+            })
     }
     return (
         <div className={styles.wrapper} onClick={e => e.stopPropagation()}>
@@ -57,6 +63,7 @@ const Login = () => {
                         }}
                     >Войти</Button></div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };
