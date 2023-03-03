@@ -6,7 +6,6 @@ import {setUser} from "../../store/slices/authSlice";
 const LoginButton = () => {
     const {loginWithRedirect, user} = useAuth0();
     const dispatch = useDispatch()
-    console.log(user)
     useEffect(() => {
         if (user !== undefined) {
             dispatch(setUser({

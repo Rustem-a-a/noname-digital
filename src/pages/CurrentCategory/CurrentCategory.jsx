@@ -36,7 +36,7 @@ const CurrentCategory = () => {
         <div className={styles.wrapper}>
             <ToastContainer />
             <div className={styles.category}>
-                {categories.map(v => <p key={v.id} ><Link to={`/currentCategory/${v.path}`}>{v.name}</Link></p>)}
+                {categories.map(v => <Link key={v.id} to={`/currentCategory/${v.path}`}>{v.name}</Link>)}
             </div>
                 <div className={styles.aboveCategory}>
                     <div className={styles.sorting}>
