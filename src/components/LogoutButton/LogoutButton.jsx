@@ -9,7 +9,7 @@ const LogoutButton = () => {
     console.log(logout)
     return (
         <p style={{cursor: 'pointer'}} onClick={() => {
-            logout({logoutParams: {returnTo: "https://rustem-a-a.github.io/test/"}})
+            logout({logoutParams: {returnTo: "https://rustem-a-a.github.io/nonamedigital/"}})
             dispatch(logoutRedux())
         }}>
             Выйти
