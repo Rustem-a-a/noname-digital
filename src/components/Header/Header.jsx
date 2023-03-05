@@ -29,23 +29,25 @@ const Header = () => {
                     }}>Корзина</NavLink>
                 </div>
             </div>
-            <FontAwesomeIcon className={styles.cartIcon} onClick={() => {
-                dispatch(toggleActiveModal())
-            }} size='2x' icon={faCartShopping}/>
-            <div className={styles.authorizationWrapper}>
-                {!isAuth
-                    ? <>
-                        <div className={styles.firebase}>
-                            <h3>Firebase</h3>
-                            <p><Link to='/login'>Войти</Link></p>
-                        </div>
-                        <div className={styles.Auth0}>
-                            <h3>Auth0</h3>
-                            <LoginButton/>
-                        </div>
-                    </>
-                    : <div className={styles.logout}><LogoutButton/></div>
-                }
+            <div className={styles.cartAuth}>
+                <FontAwesomeIcon className={styles.cartIcon} onClick={() => {
+                    dispatch(toggleActiveModal())
+                }} size='2x' icon={faCartShopping}/>
+                <div className={styles.authorizationWrapper}>
+                    {!isAuth
+                        ? <>
+                            <div className={styles.firebase}>
+                                <h3>Firebase</h3>
+                                <p><Link to='/login'>Войти</Link></p>
+                            </div>
+                            <div className={styles.Auth0}>
+                                <h3>Auth0</h3>
+                                <LoginButton/>
+                            </div>
+                        </>
+                        : <div className={styles.logout}><LogoutButton/></div>
+                    }
+                </div>
             </div>
         </div>
     );

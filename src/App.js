@@ -1,4 +1,3 @@
-import './App.css';
 import {Navigate, Route, Routes} from "react-router-dom";
 import Orders from "./pages/Account/Own";
 import Login from "./pages/Authorization/Login/Login";

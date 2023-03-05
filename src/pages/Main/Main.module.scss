@@ -26,9 +26,11 @@
 
   .carousel {
     align-self: start;
-    width: 1000px;
+
+    width: 70vw;
     height: 75vh;
-    margin: 0 auto;
+    //margin: 0 auto;
+    margin-left: 2vw;
     z-index: -1;
   }
 

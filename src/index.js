@@ -14,8 +14,9 @@ root.render(
         domain='dev-qik4mc5c5tm3xcn3.us.auth0.com'
         clientId='ZP9wtBYYqDKROlrzG6RhbDAxwvWRZcYm'
         authorizationParams={{
-            redirect_uri: window.location.origin
-        }}>
+            redirect_uri: "https://rustem-a-a.github.io/test/"
+        }}
+    >
         <Provider store={store}>
             <HashRouter>
                 <App/>

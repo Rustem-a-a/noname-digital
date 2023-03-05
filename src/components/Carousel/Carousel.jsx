@@ -8,8 +8,7 @@ const Carousel = ({slides}) => {
             setCurrentIndex(prev => {
                 if (prev !== slides.length - 1) {
                     return prev + 1
-                }
-                else {
+                } else {
                     return 0
                 }
             })
@@ -19,11 +18,13 @@ const Carousel = ({slides}) => {
         }
     }, [])
     return (
+
+
         <div className={styles.wrapper}>
-            <div
-                style={{backgroundImage: `url(${slides[currentIndex]})`}}
+            <img
+                src={slides[currentIndex]}
                 className={styles.children}>
-            </div>
+            </img>
         </div>
     );
 };
